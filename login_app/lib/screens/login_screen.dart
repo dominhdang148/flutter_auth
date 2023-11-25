@@ -164,20 +164,81 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                        text: 'Forget Password ?',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          decoration: TextDecoration.underline,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            debugPrint("Forget password");
-                          }),
+                      text: 'Forget Password ?',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          debugPrint("Forget password");
+                        },
+                    ),
                   ],
                 ),
               ),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: FormHelper.submitButton(
+              "Login",
+              () {},
+              borderColor: Colors.white,
+              txtColor: Colors.white,
+              borderRadius: 10,
+              btnColor: HexColor("#283b71"),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Center(
+            child: Text(
+              "OR",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 10,
+                right: 25,
+              ),
+              child: RichText(
+                text: TextSpan(
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 14.0,
+                  ),
+                  children: <TextSpan>[
+                    const TextSpan(text: "Don't have an account? "),
+                    TextSpan(
+                      text: 'Sign up',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.pushNamed(context, "/register");
+                        },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
